@@ -3,7 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ProductsPage {
-    WebDriver driver;
+    public static WebDriver driver;
     By add_to_cart_btn = By.id("add-to-cart-sauce-labs-backpack");
     By basket_id = By.id("shopping_cart_container");
     By checkout_id = By.id("checkout");
@@ -13,9 +13,9 @@ public class ProductsPage {
     By continue_name = By.name("continue");
     By finish_btn_id = By.id("finish");
 
-public ProductsPage(WebDriver br) {
+public ProductsPage(WebDriver driver) {
+    ProductsPage.driver = driver;
 
-    this.driver = br;
     }
 
     public void select_product() {
@@ -23,10 +23,12 @@ public ProductsPage(WebDriver br) {
     }
 
     public void gotocart() {
+
         driver.findElement(basket_id).click();
     }
 
     public void finishselection() {
+
         driver.findElement(checkout_id).click();
     }
 
@@ -40,6 +42,7 @@ public ProductsPage(WebDriver br) {
         driver.findElement(continue_name).click();
     }
     public void click_finish(){
+
         driver.findElement(finish_btn_id).click();
     }
 }

@@ -16,13 +16,24 @@ import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 public class LoginStepdefs {
-    public WebDriver driver; // This field is declared but not initialized
+    WebDriver driver = null; // This field is declared but not initialized
     LoginPage loginPage;
+
     @Before
-    public void setUp() {
+    public void browsersetUp() {
         System.setProperty("webdriver.chrome.driver", "src/main/java/chromedriver-win64/chromedriver.exe");
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
+        System.out.println("I am inside Before Step and opening the browser");
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            System.out.println("I am inside After Step and Closing the browser");
+            driver = null;
+        }
     }
 
     public LoginStepdefs() {
@@ -38,7 +49,6 @@ public class LoginStepdefs {
     // Rest of the code...
     @When("^User Logins with (.*) and (.*)$")
     public void userLoginsWithUsernameAndPassword(String uname, String pwd) {
-
         loginPage.login(uname, pwd);
     }
 
@@ -46,10 +56,5 @@ public class LoginStepdefs {
     public void userIsOnProductPage() throws InterruptedException {
         loginPage.verify_loginstatus();
 
-    }
-    @After
-    @Then("Close Windows")
-    public void closeWindows() {
-        driver.quit();
     }
 }

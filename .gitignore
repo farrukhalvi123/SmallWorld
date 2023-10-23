@@ -18,3 +18,4 @@ buildNumber.properties
 misc.xml
 compiler.xml
 vcs.xml
+allure-results
