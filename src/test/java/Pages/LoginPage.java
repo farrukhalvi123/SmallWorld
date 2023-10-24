@@ -14,10 +14,11 @@ public class LoginPage extends browsersetUp {
     public static String password_id = "password";
     public static String login_btn = "login-button";
 
-    public static void loginmethod(String usname,String Passw){
+    public static void loginmethod(String usname,String Passw) throws InterruptedException {
         driver.findElement(By.id(username_id)).sendKeys(usname);
         driver.findElement(By.id(password_id)).sendKeys(Passw);
         driver.findElement(By.id(login_btn)).click();
+        Thread.sleep(2000);
 
 
     }

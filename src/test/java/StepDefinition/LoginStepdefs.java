@@ -9,8 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LoginStepdefs {
 
     @Given("^User Logins with (.*) and (.*)$")
-    public void userLoginsWithUsernameAndPassword(String uname, String pwd) {
+    public void userLoginsWithUsernameAndPassword(String uname, String pwd) throws InterruptedException {
         loginmethod(uname, pwd);
+
     }
 
     @Then("User is on Product Page")
