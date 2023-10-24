@@ -1,5 +1,9 @@
 Guidelines for Running this Project and configuration and 
 Project Composition
+Go to the Master Branch
+Go to Terminal of the Project or gitbash and type in the following Command
+git checkout master
+Then follow the steps below.
 
 1. Install all POM.xml file dependencies
 2. Project consist of Three Sections
