@@ -2,26 +2,26 @@ package Pages;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utility.browsersetUp;
+
+import static utility.browsersetUp.*;
 
 import static java.lang.Boolean.TRUE;
 
-public class LoginPage {
-    WebDriver driver;
-    By username_id = By.id("user-name");
-    By password_id = By.id("password");
-    By login_btn = By.id("login-button");
-public LoginPage(WebDriver driver){
+public class LoginPage extends browsersetUp {
 
-    this.driver = driver;
-}
-    public void login(String usname,String Passw){
-        driver.findElement(username_id).sendKeys(usname);
-        driver.findElement(password_id).sendKeys(Passw);
-        driver.findElement(login_btn).click();
+    public static String username_id = "user-name";
+    public static String password_id = "password";
+    public static String login_btn = "login-button";
+
+    public static void loginmethod(String usname,String Passw){
+        driver.findElement(By.id(username_id)).sendKeys(usname);
+        driver.findElement(By.id(password_id)).sendKeys(Passw);
+        driver.findElement(By.id(login_btn)).click();
 
 
     }
-public void verify_loginstatus() {
+public static void verify_loginstatus() {
     String productPresent = String.valueOf(driver.getPageSource().contains("Products"));
     if (productPresent.equals(String.valueOf(TRUE))){
         Assertions.assertTrue(driver.getPageSource().contains("Products"));

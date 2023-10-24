@@ -3,34 +3,32 @@ import Pages.ProductsPage;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 
+import static Pages.ProductsPage.*;
+
 
 public class ProductSteps {
-    ProductsPage prodpage = new ProductsPage(driver);
-    public static WebDriver driver;
-
-
     @Then("Select a Product")
     public void selectAProduct() throws InterruptedException {
-        prodpage.select_product();
+        select_product();
     }
 
     @Then("Go to Cart")
-    public void goToCart() {
-        prodpage.gotocart();
+    public void goToCart() throws InterruptedException {
+        gotocart();
     }
 
     @Then("Proceed to checkout")
     public void proceedToCheckout() {
-        prodpage.finishselection();
+        finishselection();
     }
 
     @Then("^Enter Information (.*) (.*) (.*)$")
-    public void enterInformationFirstnameLastnameZipCode(String first, String last, String code) {
-        prodpage.fillinfoform(first, last, code);
+    public void enterInformationFirstnameLastnameZipCode(String first, String last, String code) throws InterruptedException {
+        fillinfoform(first, last, code);
     }
     @Then("Verify Information and Finish")
-    public void verifyInformationAndFinish() {
-        prodpage.click_continue();
-        prodpage.click_finish();
+    public void verifyInformationAndFinish() throws InterruptedException {
+        click_continue();
+        click_finish();
     }
 }

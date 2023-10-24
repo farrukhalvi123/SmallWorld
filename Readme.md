@@ -16,8 +16,6 @@ Then follow the steps below.
     - Pages Files
       - Contains all the elements and the methods. 
       - C:\Users\Hp\IdeaProjects\SmallWorld\src\test\java\Pages
-3. To Run Individual Tests Go to any Feature File and CLick on Play Button
-   \SmallWorld\src\test\java\Features
 4. To Run all the tests Go to Test Runner file and execute it. It will Run all in a sequence
 5. To Execute tests in Allure Reports.
    Run the command "allure serve allure-results"

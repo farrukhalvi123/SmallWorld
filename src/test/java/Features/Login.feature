@@ -1,7 +1,7 @@
 Feature: Testing Sauce Demo Login
   Scenario Outline: Testing Login
-    Given User is at Sauce Demo
-    When User Logins with <username> and <password>
+#    Given User is at Sauce Demo
+    Given User Logins with <username> and <password>
     Then User is on Product Page
     Examples:
     |username|password|
