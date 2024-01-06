@@ -31,4 +31,27 @@ public class ProductSteps {
         click_continue();
         click_finish();
     }
+    @Then("Selecting filter")
+    public static void userClicksOnFilter() throws InterruptedException{
+        clickonFilter();
+        Thread.sleep(2000);
+    }
+
+
+    @Then("select filter from low to high")
+    public static void selectFilter() throws InterruptedException{
+        firstfilterselect();
+    }
+
+    @Then("verifies product prices order")
+    public void verifyFilterSorting() throws InterruptedException{
+        verifyfilterapplicationandprices();
+    }
+
+
+    @Then("Remove item from the cart")
+    public void removeItemFromTheCart() throws InterruptedException {
+        removeitem();
+
+    }
 }
